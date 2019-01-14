@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+
+    [HideInInspector] public bool right = true;
     [HideInInspector] public bool jump = false;
     public float moveForce = 365F;
     public float maxSpeed = 5F;
-    public float jumpForce = 1000f;
+    public float jumpForce = 1000F;
     public Transform checkCollision;
 
     private bool grounded = false;
@@ -42,10 +44,26 @@ public class Movement : MonoBehaviour
             rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
         }
 
+        if (h > 0 && !right)
+        {
+            Flip();
+        } else if (h < 0 && right)
+        {
+            Flip();
+        }
+
         if (jump)
         {
             rb2d.AddForce(new Vector2(0f, jumpForce));
             jump = false;
         }
+    }
+
+    void Flip()
+    {
+        right = !right;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 }
