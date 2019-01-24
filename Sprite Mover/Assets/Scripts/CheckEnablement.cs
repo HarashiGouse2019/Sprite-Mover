@@ -30,7 +30,7 @@ public class CheckEnablement : MonoBehaviour
 
         //Doing this little bit right here should break the game!!!
         if (Input.GetKeyDown(KeyCode.Q))
-            Player.SetActive(false);
+           gameObject.SetActive(false);
       
 
     }

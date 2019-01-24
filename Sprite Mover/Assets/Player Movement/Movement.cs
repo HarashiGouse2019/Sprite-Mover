@@ -14,7 +14,6 @@ public class Movement : MonoBehaviour
                              //defaultPosition is always set to the starting position because it's not
                              //being updated per frame.
 
-
     //Start initializing public variables
     [HideInInspector] public bool right = true;
     [HideInInspector] public bool jump = false;
@@ -24,7 +23,7 @@ public class Movement : MonoBehaviour
     public float jumpForce = 1000f;
     public Transform checkCollision;
 
-    public bool isWalking = false; //This is used for the animator, but I haven't gotten to fix it.
+    [HideInInspector] public bool isWalking = false; //This is used for the animator, but I haven't gotten to fix it.
                                    //I'll keep this here in hopes to learn about the animator.
 
     private const float moveWithShiftDown = 1f; //Controls movement 1 unit (I hope)
@@ -59,6 +58,8 @@ public class Movement : MonoBehaviour
         if (h * rb2d.velocity.x < maxSpeed)
             rb2d.AddForce(Vector2.right * h * moveForce); //If we are less than the maxSpeed (which is 6), we will had a force
                                                           //To our RigidBody
+
+        
 
         if (Mathf.Abs (rb2d.velocity.x) > maxSpeed)
             rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y); //If we hit/pass the maxnumber
