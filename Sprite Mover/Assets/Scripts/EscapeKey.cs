@@ -17,9 +17,6 @@ public class EscapeKey : MonoBehaviour
             //This was to ensure that the script executed successfully.
             Debug.Log("If you get this message, the \"Application.Quit\" function executed successfully!");
 
-            //At first I though having a Debug.Log wouldn't do anything, but it just helped me confirm
-            //That it wasn't working after I built it. This is a handy way to really see if Application.Quit work,
-            //Though I am no professional.
         }
     }
 

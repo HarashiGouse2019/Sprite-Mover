@@ -13,15 +13,11 @@ public class CheckGameObjectStatus : MonoBehaviour
         {
 
             case false:
-                Debug.Log("We see that you're Player GameObject is inactive. Press \'Q\' again to make it active"); //Let's me know if the player
-                                                                                                                    //is inactive. You can switch the player
-                                                                                                                    //activity back on however.
                 if (Input.GetKeyDown(KeyCode.Q))     
                 /*{*/Player.SetActive(true);/*}*/
             break;
             //-------------------------------------------------------------------------------------------------------------
             case true:
-                Debug.Log("Whatever you do, don't press \'Q\'");
             break;
 
         }
