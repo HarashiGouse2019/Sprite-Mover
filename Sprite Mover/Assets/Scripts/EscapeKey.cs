@@ -12,10 +12,7 @@ public class EscapeKey : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
-
-            //This was to ensure that the script executed successfully.
-            Debug.Log("If you get this message, the \"Application.Quit\" function executed successfully!");
+            Application.Quit(); //Close out of the application
 
         }
     }
